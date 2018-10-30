@@ -59,8 +59,9 @@ setTimeout(function(){
 
     request.addEventListener('load', function () {
     var response = JSON.parse(this.responseText);
-    console.log('Response', response);
+    console.log('Response', response.itineraries[0].legs[1].fare.cost);
     });
+
 
     request.open('POST', 'https://platform.whereismytransport.com/api/journeys', true);
     request.setRequestHeader('Accept', 'application/json');
